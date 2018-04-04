@@ -8,8 +8,8 @@ import shutil
 basedir='/projects/niblab/scripts/HCP_sugar'
 datadir='/projects/niblab/data/HCP_PTN1200/node_timeseries/3T_HCP1200_MSMAll_d15_ts2'
 
-g=os.path.join(basedir,'blood_sugar_low.txt')
-h=os.path.join(basedir,'blood_sugar_high.txt')
+g=os.path.join(basedir,'blood_sugar_low_j.txt')
+h=os.path.join(basedir,'blood_sugar_high_j.txt')
 
 for file in glob.glob(os.path.join(datadir,'*.txt')):
 	sub0=file.split('/')[7]

@@ -1,0 +1,13 @@
+#!/bin/sh
+#BATCH --job-name=grab_ts
+#SBATCH --output=grab_ts.output
+#SBATCH --error=grab_ts.error
+#SBATCH -p batch
+#SBATCH -t 2:00:00
+#SBATCH -n 1
+#SBATCH --mem-per-cpu 32000
+
+# Run your executablue
+cd /projects/niblab/scripts/HCP_sugar
+
+python grab_ts.py
