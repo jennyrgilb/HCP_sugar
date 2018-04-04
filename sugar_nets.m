@@ -68,8 +68,8 @@ netmats1=  nets_netmats(ts,1,'corr');       % full correlation (normalised covar
 %%% arg4 determines whether to view the corrected-p-values, with non-significant entries removed above the diagonal.
 [p_uncorrected,p_corrected]=nets_glm(netmats1,'/projects/niblab/scripts/HCP_sugar/design.mat','/projects/niblab/scripts/HCP_sugar/design.con',0,10);  % returns matrices of 1-p
 %%% MAKING THIS CAPABLE OF UNDERSTANDING 2 ROW MATRIX - GES %%%%%%%%%
-%lean_gr_heavy=p_corrected(1,1:625)
-%heavy_gr_lean=p_corrected(2,1:625)
+high_gr_low=p_corrected(1,1:625)
+low_gr_high=p_corrected(2,1:625)
 %[p_uncorrected,p_corrected]=nets_glm(netmats1,'/projects/niblab/data/HCP_PTN820/node_timeseries/3T_HCP820_MSMAll_d25_ts2/hdiscord/PTN.mat','/projects/niblab/data/HCP_PTN820/node_timeseries/3T_HCP820_MSMAll_d25_ts2/hdiscord/PTN.con',0,10000);  % returns matrices of 1-p
 %%% OR - GLM, but with pre-masking that tests only the connections that are strong on average across all subjects.
 %%% change the "8" to a different tstat threshold to make this sparser or less sparse.
@@ -103,7 +103,7 @@ saveas(h,edges,'jpg')
 %%% arg3 = matrix row number,    i.e. the first  component of interest (from the DD list)
 %%% arg4 = matrix column number, i.e. the second component of interest (from the DD list)
 %%% arg5 = size of the first group (set to -1 for paired groups)
-nets_boxplots(ts,netmats3,22,10,-1);
-print('-depsc',sprintf('boxplot-%d-%d.eps',IC1,IC2));  % example syntax for printing to file
+%nets_boxplots(ts,netmats3,22,10,-1);
+%print('-depsc',sprintf('boxplot-%d-%d.eps',IC1,IC2));  % example syntax for printing to file
 
 toc
